@@ -1,0 +1,7 @@
+{
+  "name": "eliteplusmagazineNew",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
