@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title slot="start" class="toolbar-title">
+      Magazine
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="elite">
+        <ion-icon aria-hidden="true" name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-row class="animate__animated animate__fadeIn ios hydrated" *ngFor="let listMagazine of myDataArrayMagazine">
+    <ion-col size="6" class="ios hydrated">
+      <ion-card class="magazine-card hydrated">
+        <img src="https://www.eliteplusmagazine.com/assets/img/magazine/{{listMagazine.image_magazine_app}}"
+          alt="listMagazine.title_magazine">
+          <ion-card-title class="custom-margin-left ion-inherit-color hydrated">{{listMagazine.name_issue}}</ion-card-title>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" class="ion-margin-top ion-padding-top ion-padding-end ios hydrated">
+        <ion-card-subtitle class="ion-inherit-color ios hydrated">
+          {{listMagazine.name_issue}}
+        </ion-card-subtitle>
+        <p>{{listMagazine.title_magazine}}</p>
+
+        <ion-label class="last-article-viewAll ion-color ion-color-main ion-activatable hydrated">
+          <h4>View All <ion-icon name="arrow-forward-outline"></ion-icon></h4>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+</ion-content>

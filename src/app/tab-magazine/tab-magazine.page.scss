@@ -1,0 +1,95 @@
+/*** Magazine **///
+
+.animate__fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.animate__animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-duration: var(--animate-duration);
+    animation-duration: var(--animate-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.hydrated {
+    visibility: inherit;
+}
+ion-card {
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.magazine-card img {
+  border-radius: 15px;
+  height: auto;
+  width: 100%;
+}
+
+.magazine-card-long img {
+  border-radius: 15px;
+  height: auto !important;
+  width: 100%;
+}
+
+.magazine-card-long-details {
+
+  margin-left: 1rem;
+  margin-top: -0.7rem;
+}
+
+.magazine-card-long-details p {
+
+  font-size: 0.8rem;
+  margin: 0;
+  margin-top: 0.2rem;
+  
+}
+
+.magazine-card ion-card-title {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+  --color: #152849;
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.magazine-card ion-card-subtitle {
+  --color: rgba(51, 51, 51, 1)
+  font-family: Helvetica Neue;
+  font-size: 0.8rem;
+  line-height: 25px; /* 142.857% */
+  
+}
+
+.magazine-card .coffee-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin-top: -0.2rem;
+}
+
+.outer-heading {
+  margin-bottom: -1.3rem;
+  margin-left: 0.5rem;
+  margin-right: 1.3rem;
+}
+ion-icon.color_active{
+  color:#1C6AFE;
+}
+
+.last-article-viewAll h4{
+  color: #1C6AFE;
+  font-family: Helvetica Neue;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 20px; /* 142.857% */
+  text-align: left;
+}

@@ -24,3 +24,65 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+/* Custom Css */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("assets/fonts/HelveticaNeueLight.ttf");
+    font-style: normal;
+}
+$color-text: #152849;
+:root {
+    --ion-bg-color: #f7f8fc;
+    --ion-font-family: "Helvetica Neue", sans-serif !important;
+    font-family: "Helvetica Neue", sans-serif !important;
+    --ion-text-color: $color-text;
+
+    --ion-color-favorite: #152849;
+    --ion-color-favorite-rgb: 21, 40, 73;
+    --ion-color-favorite-contrast: #ffffff;
+    --ion-color-favorite-contrast-rgb: 255, 255, 255;
+    --ion-color-favorite-shade: #152849;
+    --ion-color-favorite-tint: #152849;
+
+}
+ion-content {
+    --background: var(--ion-bg-color) !important;
+}
+ion-button {
+    --color: $color-text;
+}
+ion-tab-button {
+    // Icon and text
+    --color: #152849;
+    --color-selected: #1C6AFE;
+    // Background
+    --background: white;
+    --background-focused: white;
+    --ripple-color: white;
+    font-weight: bold;
+}
+ion-toolbar{
+    --background: white;
+}
+.ion-list-bg{
+    --background:#f7f8fc;
+}
+.toolbar-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px; /* 150% */
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: $color-text;
+    --background: white;
+}
+.ion-color-elite{
+    --ion-color-base: var(--ion-color-favorite);
+    --ion-color-base-rgb: var(--ion-color-favorite-rgb);
+    --ion-color-contrast: var(--ion-color-favorite-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+    --ion-color-shade: var(--ion-color-favorite-shade);
+    --ion-color-tint: var(--ion-color-favorite-tint);
+}
