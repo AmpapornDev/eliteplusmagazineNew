@@ -1,27 +1,34 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-title>detailArticle</ion-title>
+        <ion-title *ngIf="dataContent as itemContent;">{{dataContent.name_menu}}</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-    <ion-item lines="none" class="item md item-lines-none ion-focusable hydrated item-label">
-        <ion-img src="http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21.jpg" class="md hydrated">
-
-        </ion-img>
-        <div class="articleNameContainer">
+<ion-content [fullscreen]="true" *ngIf="dataContent as itemContent;">
+    <ion-item lines="none" class="item md item-lines-none ion-focusable hydrated">
+        <img [src]="imageBaseUrl+'/content/'+itemContent.cover_content" alt="itemContent.title_content">
+        <!--<div class="articleNameContainer">
             <ion-label class=" md hydrated ion-text-wrap">
-                The Need To Transform To Stay Ahead The Need To Transform To Stay Ahead
+                {{itemContent.title_content}}
             </ion-label>
             <p class="date">
                 July 29, 2023 by Elite + Editorial Team
             </p>
-        </div>
+        </div>-->
     </ion-item>
     <ion-grid>
-        <ion-row>
+        <ion-row class=" ion-align-items-center ion-justify-content-between md hydrated">
+            <ion-col class="text-author">
+                by Elite + Editorial Team
+            </ion-col>
+            <ion-col class="text-author ion-text-right">
+                August 3, 2021
+            </ion-col>
+
+        </ion-row>
+        <ion-row class="color">
             <ion-col class="ion-padding">
-                <div [innerHTML]="transform(dataContent?.detail_content)"></div>
+                <div [innerHTML]="transform(itemContent.detail_content)" class="line-height"></div>
             </ion-col>
         </ion-row>
     </ion-grid>

@@ -4,6 +4,10 @@
     color: white;
 }
 
+ion-content {
+    --background: white !important;
+}
+
 ion-item {
     --padding-start: 0;
     --inner-padding-end: 0;
@@ -28,7 +32,7 @@ ion-label {
 .articleNameContainer ion-label {
     font-weight: 500;
     color: #FFF;
-    font-family: Helvetica Neue;
+    font-family: "Helvetica Neue";
     font-size: 16px;
     font-style: normal;
     line-height: 20px;
@@ -40,7 +44,7 @@ ion-label {
 
 .articleNameContainer p.date {
     color: #FFF;
-    font-family: Helvetica Neue;
+    font-family: "Helvetica Neue";
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -69,4 +73,31 @@ ion-label {
 .articleStat ion-card-subtitle {
     font-size: 1rem;
     --color: white;
+}
+
+.line-height {
+    line-height: 25px;
+}
+
+.text-author {
+    font-weight: 500;
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    font-style: normal;
+    line-height: 20px;
+    text-transform: capitalize;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+}
+
+.text-date {
+    font-weight: 500;
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    font-style: normal;
+    line-height: 20px;
+    text-transform: capitalize;
+    width: 100%;
 }

@@ -1,363 +1,371 @@
+ion-content {
+    --background: var(--ion-bg-color) !important;
+}
+
 ion-segment {
-  font-size: 14px;
-  font-weight: 800;
-  line-height: normal;
-  height: 50px;
-  --background: white;
-  --color: #152849;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: normal;
+    height: 50px;
+    --background: white;
+    --color: #152849;
 }
+
 ion-segment-button {
-  font-weight: bold;
-  --color-checked: #152849;
-  --background-activated: white !important;
-  --background-checked: linear-gradient(271deg, rgba(23, 111, 242, 0.05) 1.64%, rgba(25, 110, 238, 0.05) 102.71%);
-  --indicator-color: transparent !important;
-  --background-activated: linear-gradient(271deg, rgba(23, 111, 242, 0.05) 1.64%, rgba(25, 110, 238, 0.05) 102.71%);
+    font-weight: bold;
+    --color-checked: #152849;
+    --background-activated: white !important;
+    --background-checked: linear-gradient(271deg, rgba(23, 111, 242, 0.05) 1.64%, rgba(25, 110, 238, 0.05) 102.71%);
+    --indicator-color: transparent !important;
+    --background-activated: linear-gradient(271deg, rgba(23, 111, 242, 0.05) 1.64%, rgba(25, 110, 238, 0.05) 102.71%);
 }
+
 ion-list,
 ion-item {
-  --background: #F7F8FC;
+    --background: #F7F8FC;
 }
+
 .card-background-page {
-  ion-card {
-    position: relative;
-    text-align: left;
-  }
-
-  .card-title {
-    position: absolute;
-    top: 37%;
-    font-size: 2em;
-    width: 100%;
-    font-weight: bold;
-    color: #fff;
-  }
-
-  .card-subtitle {
-    font-size: 16px;
-    position: absolute;
-    top: 53%;
-    width: 100%;
-    color: #fff;
-  }
+    ion-card {
+        position: relative;
+        text-align: left;
+    }
+    .card-title {
+        position: absolute;
+        top: 37%;
+        font-size: 2em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+    }
+    .card-subtitle {
+        font-size: 16px;
+        position: absolute;
+        top: 53%;
+        width: 100%;
+        color: #fff;
+    }
 }
 
 
 /** card custom **/
 
 .card-slides {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
-.customCard{
-  padding: 0.5rem;
-  border-radius: 20px;
-  font-family: Helvetica Neue;
+.customCard {
+    padding: 0.5rem;
+    border-radius: 20px;
+    font-family: Helvetica Neue;
 }
+
 .customCard img {
-  border-radius: 20px;
-  width: 100%;
+    border-radius: 20px;
+    width: 100%;
 }
 
 img {
-  max-width: 100%;
-  border: 0;
+    max-width: 100%;
+    border: 0;
 }
 
 .customCard ion-card-title {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  color: #15294A;
-  font-size: 14px;
-  line-height: 22px; /* 122.222% */
-  font-weight: bold;
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-  display: block;
-
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #15294A;
+    font-size: 14px;
+    line-height: 22px;
+    /* 122.222% */
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-transform: capitalize;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .hydrated {
-  visibility: inherit;
+    visibility: inherit;
 }
 
 .customCard_desc {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-align-content: center;
-  align-content: center;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.customCard_desc h4{
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 22px;
-
-}
-.customCard_icon ion-icon{
-  //color: var(--ion-color-main)!important;
-  margin-top: 0.5rem;
-  width: 24px;
-  height: 24px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: center;
+    align-content: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
-ion-icon.color_active{
-  color:#1C6AFE;
+.customCard_desc h4 {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 22px;
 }
 
-.header-last-article{
-  color: #15294A;
-  font-family: Helvetica Neue;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: bold;
-  text-transform: capitalize;
+.customCard_icon ion-icon {
+    //color: var(--ion-color-main)!important;
+    margin-top: 0.5rem;
+    width: 24px;
+    height: 24px;
 }
-.last-article-viewAll h4{
-  color: #1C6AFE;
-  text-align: center;
-  font-family: Helvetica Neue;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 20px; /* 142.857% */
+
+ion-icon.color_active {
+    color: #1C6AFE;
 }
+
+.header-last-article {
+    color: #15294A;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.last-article-viewAll h4 {
+    color: #1C6AFE;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 20px;
+    /* 142.857% */
+}
+
 .animate__fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
 }
 
 .animate__animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-duration: var(--animate-duration);
-  animation-duration: var(--animate-duration);
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-duration: var(--animate-duration);
+    animation-duration: var(--animate-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
-.ion_card_content{
-  flex: 0 0 calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
-  width: calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
-  max-width: calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
+.ion_card_content {
+    flex: 0 0 calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
+    width: calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
+    max-width: calc(calc(12 / var(--ion-grid-columns, 12)) * 100%);
 }
-
 
 .HomeCard {
-
-  padding: 0.8rem;
-  border-radius: 15px;
+    padding: 0.8rem;
+    border-radius: 15px;
 }
 
 .HomeCard img {
-
-  border-radius: 15px;
-  height: 10rem;
-  width: 100%;
+    border-radius: 15px;
+    height: 10rem;
+    width: 100%;
 }
 
 .HomeCard ion-card-title {
-
-  margin-top:0.8rem;
-  font-size: 1rem;
-  --color: #162B4A;
-  font-family: Helvetica Neue;
-  font-size: 14px;
-  font-style: normal;
-  text-transform: capitalize;
-
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    --color: #162B4A;
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-style: normal;
+    text-transform: capitalize;
 }
 
 .HomePrice {
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  margin-top: -0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-top: -0.2rem;
 }
 
 .HomeAddButton {
-
-  color: var(--ion-color-main) !important;
-  margin-top: 0.5rem;
+    color: var(--ion-color-main) !important;
+    margin-top: 0.5rem;
 }
 
 .HomeCardLong img {
-
-  border-radius: 15px;
-  height: auto;
-  width: 100%;
+    border-radius: 15px;
+    height: auto;
+    width: 100%;
 }
 
 .HomeCardLongDetails {
-
-  margin-left: 0.6rem;
-  margin-top: -0.7rem;
+    margin-left: 0.6rem;
+    margin-top: -0.7rem;
 }
 
 .HomeCardLongDetails p {
-
-  font-size: 0.8rem;
-  margin: 0;
-  margin-top: 0.2rem;
+    font-size: 0.8rem;
+    margin: 0;
+    margin-top: 0.2rem;
 }
 
 .outer-heading {
-  margin-bottom: -1.3rem;
-  margin-left: 0.5rem;
-  margin-right: 1.3rem;
+    margin-bottom: -1.3rem;
+    margin-left: 0.5rem;
+    margin-right: 1.3rem;
 }
+
 .ion-align-items-center {
-  -webkit-align-items: center!important;
-  align-items: center!important;
+    -webkit-align-items: center!important;
+    align-items: center!important;
 }
+
 .ion-justify-content-between {
-  -webkit-justify-content: space-between!important;
-  justify-content: space-between!important;
+    -webkit-justify-content: space-between!important;
+    justify-content: space-between!important;
 }
+
 .heading {
-  letter-spacing:0.1rem;
-  margin-left: 1rem;
-  padding-bottom: 0.5rem;
+    letter-spacing: 0.1rem;
+    margin-left: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 
 /** Photo Essay***/
+
 .row_photoessay {
-  flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
-  width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
-  max-width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+    flex: 0 0 calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+    width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
+    max-width: calc(calc(6 / var(--ion-grid-columns, 12)) * 100%);
 }
+
 .photoEssayContainer {
-
-  position: relative;
-  text-align: center;
-  color: white;
+    position: relative;
+    text-align: center;
+    color: white;
 }
-
 
 .PhotoessayNameContainer {
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  position: absolute;
-  z-index: 99999;
-  background-color: rgba(0, 0, 0, 0.7);
-  bottom: 0;
-  width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .PhotoessayNameContainer ion-icon {
-  margin-top: 0.1rem;
+    margin-top: 0.1rem;
 }
 
 .PhotoessayNameContainer ion-label {
-  font-size: 1rem;
-  font-weight: 500;
+    font-size: 1rem;
+    font-weight: 500;
 }
-
 
 .card-Photoessay {
-  div.pd-1{
-    padding-top: 1rem;
-    padding-left: 1.3rem;
-    padding-bottom: 1rem;
-  }
-  img{
-    border-radius: 15px;
-    width:100%;
-    height: 100%;
-  }
-
-  .Photoessay-title {
-    width: 100%;
-    color: #15294A;
-    font-family: Helvetica Neue;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 18px; /* 128.571% */
-    text-transform: capitalize;
-    padding-top: 0.8rem;
-
-  }
-
-  .Photoessay-subtitle {
-    width: 100%;
-    color: #0F0F0F;
-    font-family: Helvetica Neue;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px; /* 150% */
-  }
+    div.pd-1 {
+        padding-top: 1rem;
+        padding-left: 1.3rem;
+        padding-bottom: 1rem;
+    }
+    img {
+        border-radius: 15px;
+        width: 100%;
+        height: 100%;
+    }
+    .Photoessay-title {
+        width: 100%;
+        color: #15294A;
+        font-family: Helvetica Neue;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        /* 128.571% */
+        text-transform: capitalize;
+        padding-top: 0.8rem;
+    }
+    .Photoessay-subtitle {
+        width: 100%;
+        color: #0F0F0F;
+        font-family: Helvetica Neue;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px;
+        /* 150% */
+    }
 }
+
 
 /*** Category Content segment***/
-.contentCategoryCard{
-  border-radius: 15px;
-  font-family: Helvetica Neue;
-  padding-bottom: 1rem;
+
+.contentCategoryCard {
+    border-radius: 15px;
+    font-family: Helvetica Neue;
+    padding-bottom: 1rem;
 }
-.contentCategoryCard ion-card-header{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+
+.contentCategoryCard ion-card-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .contentCategoryCard ion-card-title {
-  font-size: 1rem;
-  color: #15294A;
-  font-size: 16px;
-  line-height: 22px; /* 122.222% */
-  font-weight: bold;
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-  padding-bottom: 1rem;
+    font-size: 1rem;
+    color: #15294A;
+    font-size: 16px;
+    line-height: 22px;
+    /* 122.222% */
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-transform: capitalize;
+    padding-bottom: 1rem;
 }
 
 .contentCategoryCard img {
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  width: 100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
 }
+
 .contentCategoryCard_desc {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-align-content: center;
-  align-content: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: center;
+    align-content: center;
 }
-.contentCategoryCard_desc h5{
-  font-size: 0.8rem;
-  color:#222428;
-  margin-top: 0.5rem;
-  text-transform: capitalize;
+
+.contentCategoryCard_desc h5 {
+    font-size: 0.8rem;
+    color: #222428;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
 }
+
+
 /*
 .contentCategoryCard {
 
@@ -368,11 +376,12 @@ ion-icon.color_active{
   align-items: center;
 
 }*/
-.contentdActions ion-icon{
-  font-size: 1.2rem;
-  padding-left: 0.5rem;
-}
-.postActions ion-icon:not(:first-child) {
-  padding-left: 0.7rem;
+
+.contentdActions ion-icon {
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
 }
 
+.postActions ion-icon:not(:first-child) {
+    padding-left: 0.7rem;
+}
