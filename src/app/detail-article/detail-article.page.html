@@ -7,22 +7,19 @@
 <ion-content [fullscreen]="true" *ngIf="dataContent as itemContent;">
     <ion-item lines="none" class="item md item-lines-none ion-focusable hydrated">
         <img [src]="imageBaseUrl+'/content/'+itemContent.cover_content" alt="itemContent.title_content">
-        <!--<div class="articleNameContainer">
-            <ion-label class=" md hydrated ion-text-wrap">
-                {{itemContent.title_content}}
-            </ion-label>
-            <p class="date">
-                July 29, 2023 by Elite + Editorial Team
-            </p>
-        </div>-->
+
     </ion-item>
     <ion-grid>
         <ion-row class=" ion-align-items-center ion-justify-content-between md hydrated">
+            <ion-col size="12" class="ion-padding articleTitleContent">
+                {{itemContent.title_content}}
+            </ion-col>
+
             <ion-col class="text-author">
-                by Elite + Editorial Team
+                by {{itemContent.firstname_user}} {{itemContent.lastname_user}}
             </ion-col>
             <ion-col class="text-author ion-text-right">
-                August 3, 2021
+                {{itemContent.date_add | date: 'MMMM dd, yyyy'}}
             </ion-col>
 
         </ion-row>

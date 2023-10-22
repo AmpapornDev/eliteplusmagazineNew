@@ -29,13 +29,13 @@ ion-label {
     width: 100%;
 }
 
-.articleNameContainer ion-label {
-    font-weight: 500;
-    color: #FFF;
+ion-col.articleTitleContent {
+    font-weight: bold;
     font-family: "Helvetica Neue";
-    font-size: 16px;
+    color: #152849;
+    font-size: 18px;
     font-style: normal;
-    line-height: 20px;
+    line-height: 24px;
     text-transform: capitalize;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -86,7 +86,7 @@ ion-label {
     font-style: normal;
     line-height: 20px;
     text-transform: capitalize;
-    padding-top: 1rem;
+    padding-top: 0rem;
     padding-left: 1rem;
     padding-right: 1rem;
     width: 100%;
