@@ -1,284 +1,277 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Elite Plus Magazine</ion-title>
-  </ion-toolbar>
-  <ion-toolbar>
-    <ion-segment scrollable (ionChange)="segmentChanged()" [(ngModel)]="type" value="Home">
-      <ion-segment-button value="Home">
-        <ion-label>Home</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="2">
-        <ion-label>Exclusive</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="9">
-        <ion-label>Investment</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="3">
-        <ion-label>Diplomat</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="5">
-        <ion-label>Adventure</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="6">
-        <ion-label>Health</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="8">
-        <ion-label>Cuisine</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Elite Plus Magazine</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-segment scrollable (ionChange)="segmentChanged()" [(ngModel)]="type" value="Home">
+            <ion-segment-button value="Home">
+                <ion-label>Home</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="2">
+                <ion-label>Exclusive</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="9">
+                <ion-label>Investment</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="3">
+                <ion-label>Diplomat</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="5">
+                <ion-label>Adventure</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="6">
+                <ion-label>Health</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="8">
+                <ion-label>Cuisine</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ng-container [ngSwitch]="type">
-    <!--- Start Segment Home -->
-    <div *ngSwitchCase="'Home'">
-      <!--- start slide hilight -->
-      <swiper class="card-slides" [initialSlide]="0" [slidesPerView]="1.2" [spaceBetween]="0" [centeredSlides]="false"
-        #swiper>
-        <ng-template swiperSlide *ngFor="let itemSlide of dataSlideContent">
-          <ion-card class="customCard">
-            <img [src]="imageBaseUrl+'/content/'+itemSlide.cover_content">
-            <ion-card-title>
-              {{itemSlide.title_content}}
-              <!---<p>{{itemSlide.name_menu}}</p>-->
-            </ion-card-title>
-            <div class="customCard_desc">
-              <h4>{{itemSlide.date_add | date: 'MMM dd, yyyy'}}</h4>
-              <div class="customCard_icon">
-                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-              </div>
-            </div>
-          </ion-card>
-        </ng-template>
-      </swiper>
-      <!--- end slide hilight -->
+    <ng-container [ngSwitch]="type">
+        <!--- Start Segment Home -->
+        <div *ngSwitchCase="'Home'">
+            <!--- start slide hilight -->
+            <swiper class="card-slides" [initialSlide]="0" [slidesPerView]="1.2" [spaceBetween]="0" [centeredSlides]="false" #swiper>
+                <ng-template swiperSlide *ngFor="let itemSlide of dataSlideContent">
+                    <ion-card class="customCard">
+                        <img [src]="imageBaseUrl+'/content/'+itemSlide.cover_content">
+                        <ion-card-title>
+                            {{itemSlide.title_content}}
+                            <!---<p>{{itemSlide.name_menu}}</p>-->
+                        </ion-card-title>
+                        <div class="customCard_desc">
+                            <h4>{{itemSlide.date_add | date: 'MMM dd, yyyy'}}</h4>
+                            <div class="customCard_icon">
+                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-card>
+                </ng-template>
+            </swiper>
+            <!--- end slide hilight -->
 
-      <!--- start content in category limit 10 -->
-      <ion-row class="outer-heading ion-justify-content-between ion-align-items-center hydrated">
-        <h4 class="heading header-last-article">News</h4>
-        <ion-label class="last-article-viewAll ion-color ion-color-main ion-activatable hydrated">
-          <h4>View All <ion-icon name="arrow-forward-outline"></ion-icon></h4>
-        </ion-label>
-      </ion-row>
-      <ion-row class="hydrated">
-        <ion-col size="12" class="animate__animated animate__fadeIn ion_card_content">
-          <ion-card class="HomeCard HomeCardLong hydrated" onloadeddata="listCategoryContent(itemCategory.id_menu)"
-            *ngFor="let itemContentCategory of dataContentCategory">
-            <ion-row class="hydrated">
-              <ion-col size="5" class="hydrated">
-                <img [src]="imageBaseUrl+'/content/'+itemContentCategory.cover_content"
-                  alt="itemContentCategory.title_content">
-              </ion-col>
-              <ion-col size="7" class="hydrated">
-                <div class="HomeCardLongDetails">
-                  <ion-card-title role="heading"
-                    class="ion-inherit-color hydrated">{{itemContentCategory.title_content}}</ion-card-title>
-                  <p>{{itemContentCategory.date_add | date: 'MMM dd, yyyy'}}</p>
-                </div>
-              </ion-col>
+            <!--- start content in category limit 10 -->
+            <ion-row class="outer-heading ion-justify-content-between ion-align-items-center hydrated">
+                <h4 class="heading header-last-article">News</h4>
+                <ion-label class="last-article-viewAll ion-color ion-color-main ion-activatable hydrated">
+                    <h4>View All
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </h4>
+                </ion-label>
             </ion-row>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <!--- end content in category limit 10 -->
+            <ion-row class="hydrated">
+                <ion-col size="12" class="animate__animated animate__fadeIn ion_card_content">
+                    <ion-card class="HomeCard HomeCardLong hydrated" onloadeddata="listCategoryContent(itemCategory.id_menu)" *ngFor="let itemContentCategory of dataContentCategory">
+                        <ion-row class="hydrated">
+                            <ion-col size="5" class="hydrated">
+                                <img [src]="imageBaseUrl+'/content/'+itemContentCategory.cover_content" alt="itemContentCategory.title_content">
+                            </ion-col>
+                            <ion-col size="7" class="hydrated">
+                                <div class="HomeCardLongDetails">
+                                    <ion-card-title role="heading" class="ion-inherit-color hydrated">{{itemContentCategory.title_content}}</ion-card-title>
+                                    <p>{{itemContentCategory.date_add | date: 'MMM dd, yyyy'}}</p>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+            <!--- end content in category limit 10 -->
 
-      <!--- start content in photoessay limit 10 -->
-      <ion-row class="outer-heading ion-justify-content-between ion-align-items-center hydrated">
-        <h4 class="heading header-last-article">Photo Essay</h4>
-        <ion-label class="last-article-viewAll ion-color ion-color-main ion-activatable hydrated">
-          <h4>View All <ion-icon name="arrow-forward-outline"></ion-icon></h4>
-        </ion-label>
-      </ion-row>
-
-
-      <swiper class="card-slides card-Photoessay" [initialSlide]="0" [slidesPerView]="2.2" [spaceBetween]="0"
-        [centeredSlides]="false" #swiper>
-
-        <ng-template swiperSlide *ngFor="let itemPhotoEssay of dataPhotoEssay">
-          <div class="pd-1">
-            <img [src]="imageBaseUrl+'/photo_essay/'+itemPhotoEssay.cover_essay" alt="itemPhotoEssay.title_essay">
-            <div class="Photoessay-title">{{itemPhotoEssay.title_essay}}</div>
-            <div class="Photoessay-subtitle">{{itemPhotoEssay.name_issue}}</div>
-          </div>
-        </ng-template>
-
-      </swiper>
-      <!--- end content in photoessay limit 10 -->
-
-    </div>
-    <!--- end Segment Home -->
-
-    <!--- Start Segment Exclusive -->
-    <div *ngSwitchCase="'2'">
-      <ion-row>
-        <ion-col>
-  
-          <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
-            <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content"
-                  alt="dataContent.title_content">
-            <ion-card-header>
-              <ion-card-title> {{dataContent.title_content}}</ion-card-title>
-              <ion-card-subtitle>
-                <div class="contentCategoryCard_desc">
-                  <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
-                  <div class="contentdActions">
-                    <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                    <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                  </div>
-                </div>
-              </ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-
-        </ion-col>
-      </ion-row>
-    </div>
-    <!--- end Segment Exclusive -->
+            <!--- start content in photoessay limit 10 -->
+            <ion-row class="outer-heading ion-justify-content-between ion-align-items-center hydrated">
+                <h4 class="heading header-last-article">Photo Essay</h4>
+                <ion-label class="last-article-viewAll ion-color ion-color-main ion-activatable hydrated">
+                    <h4>View All
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </h4>
+                </ion-label>
+            </ion-row>
 
 
-    <!--- Start Segment Investment -->
-    <div *ngSwitchCase="'9'">
-      <ion-row>
-        <ion-col>
-  
-          <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
-            <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content"
-                  alt="dataContent.title_content">
-            <ion-card-header>
-              <ion-card-title> {{dataContent.title_content}}</ion-card-title>
-              <ion-card-subtitle>
-                <div class="contentCategoryCard_desc">
-                  <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
-                  <div class="contentdActions">
-                    <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                    <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                  </div>
-                </div>
-              </ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
+            <swiper class="card-slides card-Photoessay" [initialSlide]="0" [slidesPerView]="2.2" [spaceBetween]="0" [centeredSlides]="false" #swiper>
 
-        </ion-col>
-      </ion-row>
+                <ng-template swiperSlide *ngFor="let itemPhotoEssay of dataPhotoEssay">
+                    <div class="pd-1">
+                        <img [src]="imageBaseUrl+'/photo_essay/'+itemPhotoEssay.cover_essay" alt="itemPhotoEssay.title_essay">
+                        <div class="Photoessay-title">{{itemPhotoEssay.title_essay}}</div>
+                        <div class="Photoessay-subtitle">{{itemPhotoEssay.name_issue}}</div>
+                    </div>
+                </ng-template>
 
-    </div>
-    <!--- end Segment Investment -->
+            </swiper>
+            <!--- end content in photoessay limit 10 -->
 
-    <!--- Start Segment Diplomat -->
-    <div *ngSwitchCase="'3'">
-      <ion-row>
-        <ion-col>
-  
-          <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
-            <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content"
-                  alt="dataContent.title_content">
-            <ion-card-header>
-              <ion-card-title> {{dataContent.title_content}}</ion-card-title>
-              <ion-card-subtitle>
-                <div class="contentCategoryCard_desc">
-                  <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
-                  <div class="contentdActions">
-                    <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                    <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                  </div>
-                </div>
-              </ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
+        </div>
+        <!--- end Segment Home -->
 
-        </ion-col>
-      </ion-row>
+        <!--- Start Segment Exclusive -->
+        <div *ngSwitchCase="'2'">
+            <ion-row>
+                <ion-col>
 
-    </div>
-    <!--- end Segment Diplomat -->
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent" [routerLink]="[dataContent.id_content]">
+                        <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
+                        <ion-card-header>
+                            <ion-card-title> {{dataContent.title_content}}</ion-card-title>
+                            <ion-card-subtitle>
+                                <div class="contentCategoryCard_desc">
+                                    <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
+                                    <div class="contentdActions">
+                                        <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                        <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                    </div>
+                                </div>
+                            </ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
 
-    <!--- Start Segment Adventure -->
-    <div *ngSwitchCase="'5'">
-      <ion-row>
-        <ion-col>
-  
-          <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
-            <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content"
-                  alt="dataContent.title_content">
-            <ion-card-header>
-              <ion-card-title> {{dataContent.title_content}}</ion-card-title>
-              <ion-card-subtitle>
-                <div class="contentCategoryCard_desc">
-                  <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
-                  <div class="contentdActions">
-                    <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                    <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                  </div>
-                </div>
-              </ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-
-        </ion-col>
-      </ion-row>
-
-    </div>
-    <!--- end Segment Adventure -->
-
-    <!--- Start Segment Health -->
-    <div *ngSwitchCase="'6'">
-      <ion-row>
-        <ion-col>
-  
-          <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
-            <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content"
-                  alt="dataContent.title_content">
-            <ion-card-header>
-              <ion-card-title> {{dataContent.title_content}}</ion-card-title>
-              <ion-card-subtitle>
-                <div class="contentCategoryCard_desc">
-                  <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
-                  <div class="contentdActions">
-                    <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                    <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                  </div>
-                </div>
-              </ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-
-        </ion-col>
-      </ion-row>
-
-    </div>
-    <!--- end Segment Health -->
-
-    <!--- Start Segment Cuisine -->
-    <div *ngSwitchCase="'8'">
-      <ion-row>
-        <ion-col>
-  
-          <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
-            <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content"
-                  alt="dataContent.title_content">
-            <ion-card-header>
-              <ion-card-title> {{dataContent.title_content}}></ion-card-title>
-              <ion-card-subtitle>
-                <div class="contentCategoryCard_desc">
-                  <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
-                  <div class="contentdActions">
-                    <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                    <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
-                  </div>
-                </div>
-              </ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-
-        </ion-col>
-      </ion-row>
-
-    </div>
-    <!--- end Segment Cuisine -->
+                </ion-col>
+            </ion-row>
+        </div>
+        <!--- end Segment Exclusive -->
 
 
+        <!--- Start Segment Investment -->
+        <div *ngSwitchCase="'9'">
+            <ion-row>
+                <ion-col>
+
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                        <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
+                        <ion-card-header>
+                            <ion-card-title> {{dataContent.title_content}}</ion-card-title>
+                            <ion-card-subtitle>
+                                <div class="contentCategoryCard_desc">
+                                    <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
+                                    <div class="contentdActions">
+                                        <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                        <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                    </div>
+                                </div>
+                            </ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+
+                </ion-col>
+            </ion-row>
+
+        </div>
+        <!--- end Segment Investment -->
+
+        <!--- Start Segment Diplomat -->
+        <div *ngSwitchCase="'3'">
+            <ion-row>
+                <ion-col>
+
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                        <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
+                        <ion-card-header>
+                            <ion-card-title> {{dataContent.title_content}}</ion-card-title>
+                            <ion-card-subtitle>
+                                <div class="contentCategoryCard_desc">
+                                    <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
+                                    <div class="contentdActions">
+                                        <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                        <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                    </div>
+                                </div>
+                            </ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+
+                </ion-col>
+            </ion-row>
+
+        </div>
+        <!--- end Segment Diplomat -->
+
+        <!--- Start Segment Adventure -->
+        <div *ngSwitchCase="'5'">
+            <ion-row>
+                <ion-col>
+
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                        <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
+                        <ion-card-header>
+                            <ion-card-title> {{dataContent.title_content}}</ion-card-title>
+                            <ion-card-subtitle>
+                                <div class="contentCategoryCard_desc">
+                                    <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
+                                    <div class="contentdActions">
+                                        <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                        <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                    </div>
+                                </div>
+                            </ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+
+                </ion-col>
+            </ion-row>
+
+        </div>
+        <!--- end Segment Adventure -->
+
+        <!--- Start Segment Health -->
+        <div *ngSwitchCase="'6'">
+            <ion-row>
+                <ion-col>
+
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                        <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
+                        <ion-card-header>
+                            <ion-card-title> {{dataContent.title_content}}</ion-card-title>
+                            <ion-card-subtitle>
+                                <div class="contentCategoryCard_desc">
+                                    <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
+                                    <div class="contentdActions">
+                                        <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                        <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                    </div>
+                                </div>
+                            </ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+
+                </ion-col>
+            </ion-row>
+
+        </div>
+        <!--- end Segment Health -->
+
+        <!--- Start Segment Cuisine -->
+        <div *ngSwitchCase="'8'">
+            <ion-row>
+                <ion-col>
+
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                        <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
+                        <ion-card-header>
+                            <ion-card-title> {{dataContent.title_content}}></ion-card-title>
+                            <ion-card-subtitle>
+                                <div class="contentCategoryCard_desc">
+                                    <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
+                                    <div class="contentdActions">
+                                        <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                        <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                    </div>
+                                </div>
+                            </ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+
+                </ion-col>
+            </ion-row>
+
+        </div>
+        <!--- end Segment Cuisine -->
 
 
-  </ng-container>
+
+
+    </ng-container>
 </ion-content>

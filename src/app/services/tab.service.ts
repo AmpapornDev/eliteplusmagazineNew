@@ -23,6 +23,13 @@ export class TabService {
       );
   }
 
+  getArticleDetails(id: any): Observable<any> {
+    return this.http.get<any>(`${environment.baseUrl}/ws_detail.php?var_id=` + id).pipe(
+      tap((_) => console.log(`Student fetched: ${id}`)),
+      catchError(this.handleError<any>(`Get student id=${id}`))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
