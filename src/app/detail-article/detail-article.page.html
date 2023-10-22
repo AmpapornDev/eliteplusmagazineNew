@@ -1,13 +1,28 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>detailArticle</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>detailArticle</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detailArticle</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-item lines="none" class="item md item-lines-none ion-focusable hydrated item-label">
+        <ion-img src="http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21.jpg" class="md hydrated">
+
+        </ion-img>
+        <div class="articleNameContainer">
+            <ion-label class=" md hydrated ion-text-wrap">
+                The Need To Transform To Stay Ahead The Need To Transform To Stay Ahead
+            </ion-label>
+            <p class="date">
+                July 29, 2023 by Elite + Editorial Team
+            </p>
+        </div>
+    </ion-item>
+    <ion-grid>
+        <ion-row>
+            <ion-col class="ion-padding">
+                <div [innerHTML]="transform(dataContent?.detail_content)"></div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

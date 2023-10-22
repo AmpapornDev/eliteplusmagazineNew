@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TabService } from '../services/tab.service';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detail-article',
@@ -15,7 +16,8 @@ export class DetailArticlePage implements OnInit {
 
   constructor(
     private tabService: TabService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private domSanitizer: DomSanitizer) { }
   
 
   ngOnInit() {
@@ -25,6 +27,9 @@ export class DetailArticlePage implements OnInit {
       console.log(this.dataContent);
     });
 
+  }
+  transform(html: string): SafeHtml {
+    return this.domSanitizer.bypassSecurityTrustHtml(html);
   }
 
 }
