@@ -140,7 +140,7 @@
             <ion-row>
                 <ion-col>
 
-                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent" [routerLink]="[dataContent.id_content]">
                         <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
                         <ion-card-header>
                             <ion-card-title> {{dataContent.title_content}}</ion-card-title>
@@ -167,7 +167,7 @@
             <ion-row>
                 <ion-col>
 
-                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent" [routerLink]="[dataContent.id_content]">
                         <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
                         <ion-card-header>
                             <ion-card-title> {{dataContent.title_content}}</ion-card-title>
@@ -194,7 +194,7 @@
             <ion-row>
                 <ion-col>
 
-                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent" [routerLink]="[dataContent.id_content]">
                         <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
                         <ion-card-header>
                             <ion-card-title> {{dataContent.title_content}}</ion-card-title>
@@ -221,7 +221,7 @@
             <ion-row>
                 <ion-col>
 
-                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent" [routerLink]="[dataContent.id_content]">
                         <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
                         <ion-card-header>
                             <ion-card-title> {{dataContent.title_content}}</ion-card-title>
@@ -248,7 +248,7 @@
             <ion-row>
                 <ion-col>
 
-                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                    <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent" [routerLink]="[dataContent.id_content]">
                         <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content">
                         <ion-card-header>
                             <ion-card-title> {{dataContent.title_content}}></ion-card-title>
