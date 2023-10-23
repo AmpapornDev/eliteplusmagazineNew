@@ -106,7 +106,7 @@ export class TabHomePage implements OnInit {
 
   gotoArticle(id:any){
     console.log('gotoArticle'+id);
-    this.router.navigateByUrl('article');
+    this.router.navigate(['/article', id]);
 
   }
 
