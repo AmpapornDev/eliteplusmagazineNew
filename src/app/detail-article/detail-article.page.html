@@ -30,7 +30,13 @@
         </ion-row>
         <ion-row class="color">
             <ion-col class="ion-padding">
-                <div [innerHTML]="transform(itemContent.detail_content)" class="line-height"></div>
+                <div [innerHTML]="transform(itemContent.detail_content)" class="line-height" [ngClass]="{'limitTextHeight': isReadMore}">
+
+                </div>
+                <button type="button" (click)="showText()" class="btn-read">
+                    ... {{ isReadMore ? 'Read More': 'Read Less' }}
+                </button>
+
             </ion-col>
         </ion-row>
     </ion-grid>

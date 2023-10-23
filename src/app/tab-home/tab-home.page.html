@@ -39,7 +39,8 @@
                     <ion-card class="customCard">
                         <img [src]="imageBaseUrl+'/content/'+itemSlide.cover_content">
                         <ion-card-title>
-                            {{itemSlide.title_content}}
+                            {{itemSlide.title_content | slice: 0: 100 }}
+
                             <!---<p>{{itemSlide.name_menu}}</p>-->
                         </ion-card-title>
                         <div class="customCard_desc">

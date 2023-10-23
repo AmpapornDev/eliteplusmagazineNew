@@ -14,6 +14,7 @@ export class DetailArticlePage implements OnInit {
 
   dataContent:any;
   imageBaseUrl = environment.imageUrl;
+  isReadMore = true;
 
   constructor(
     private tabService: TabService,
@@ -37,6 +38,10 @@ export class DetailArticlePage implements OnInit {
   gotoHomepage(){
     console.log('gotoHomepage');
     this.navCtrl.navigateForward('tabs/tab-home');
+  }
+
+  showText() {
+    this.isReadMore = !this.isReadMore;
   }
 
 }
