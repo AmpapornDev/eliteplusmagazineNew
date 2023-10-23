@@ -14,7 +14,7 @@
         <img [src]="imageBaseUrl+'/content/'+itemContent.cover_content" alt="itemContent.title_content">
 
     </ion-item>
-    <ion-grid>
+    <ion-grid class="line-border-bottom">
         <ion-row class=" ion-align-items-center ion-justify-content-between md hydrated">
             <ion-col size="12" class="ion-padding articleTitleContent">
                 {{itemContent.title_content}} - {{itemContent.subject_content}}
@@ -36,8 +36,32 @@
                 <button type="button" (click)="showText()" class="btn-read">
                     ... {{ isReadMore ? 'Read More': 'Read Less' }}
                 </button>
-
             </ion-col>
         </ion-row>
     </ion-grid>
+    <!--- start content in photoessay limit 10 -->
+    <ion-row class="outer-heading ion-justify-content-between ion-align-items-center hydrated line">
+        <h4 class="heading header-last-article">You May Also Like</h4>
+        <ion-label class="last-article-viewAll ion-color ion-color-main ion-activatable hydrated">
+            <h4>View All
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </h4>
+        </ion-label>
+    </ion-row>
+
+    <!-- slides.component.html -->
+    <swiper class="card-slides card-Photoessay" [initialSlide]="0" [slidesPerView]="2.2" [spaceBetween]="0" [centeredSlides]="false" #swiper>
+
+        <ng-template swiperSlide *ngFor="let itemAlsoLike of dataAlsoLike">
+            <div class="pd-1">
+                <img [src]="imageBaseUrl+'/content/'+itemAlsoLike.cover_content" alt="itemAlsoLike.title_content">
+                <div class="Photoessay-title">{{itemAlsoLike.title_content}}</div>
+                <div class="Photoessay-subtitle">{{itemAlsoLike.date_add | date: 'MMM dd, yyyy'}}</div>
+            </div>
+        </ng-template>
+    </swiper>
+
+
+
+
 </ion-content>

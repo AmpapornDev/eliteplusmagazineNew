@@ -112,7 +112,82 @@ button.btn-read {
     color: #1C6AFE;
     text-align: center;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 800;
     line-height: 20px;
     background-color: #FFF;
+    padding-top: 1rem;
+}
+
+.card-slides {
+    margin-top: 10px;
+}
+
+.card-Photoessay {
+    div.pd-1 {
+        padding-top: 1rem;
+        padding-left: 1.3rem;
+        padding-bottom: 1rem;
+    }
+    img {
+        border-radius: 15px;
+        width: 100%;
+        height: 100%;
+    }
+    .Photoessay-title {
+        width: 100%;
+        color: #15294A;
+        font-family: Helvetica Neue;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        /* 128.571% */
+        text-transform: capitalize;
+        padding-top: 0.8rem;
+    }
+    .Photoessay-subtitle {
+        width: 100%;
+        color: #0F0F0F;
+        font-family: Helvetica Neue;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px;
+        /* 150% */
+    }
+}
+
+.header-last-article {
+    color: #15294A;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.outer-heading {
+    margin-bottom: -1.3rem;
+    margin-left: 0.5rem;
+    margin-right: 1.3rem;
+}
+
+.heading {
+    letter-spacing: 0.1rem;
+    margin-left: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.line-border-bottom {
+    border-bottom: 1px solid rgba(122, 122, 122, 0.15);
+}
+
+.last-article-viewAll h4 {
+    color: #1C6AFE;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 20px;
+    /* 142.857% */
 }

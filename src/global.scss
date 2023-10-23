@@ -39,7 +39,7 @@
 
 $color-text: #152849;
 :root {
-    --ion-bg-color: #f7f8fc;
+    /*--ion-bg-color: #f7f8fc;*/
     --ion-font-family: "Helvetica Neue", sans-serif !important;
     font-family: "Helvetica Neue", sans-serif !important;
     --ion-text-color: $color-text;
@@ -84,7 +84,6 @@ ion-toolbar {
     font-size: 20px;
     font-weight: bold;
     line-height: 30px;
-    /* 150% */
     letter-spacing: 1px;
     text-transform: capitalize;
     color: $color-text;

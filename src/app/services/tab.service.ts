@@ -30,6 +30,15 @@ export class TabService {
     );
   }
 
+  getAlsoLike(id_menu: any, id_content: any){
+    return this.http.get<any>(`${environment.baseUrl}/ws_also_like.php?var_id_menu=`+id_menu+`&var_id_content=`+id_content)
+    .pipe(
+      tap(_ => console.log(`Also like fetched id_content: ${id_content}`)),
+        catchError(this.handleError<any>(`Get Content id_content=${id_content}`))
+    );
+
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

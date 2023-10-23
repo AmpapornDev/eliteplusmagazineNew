@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { TabService } from '../services/tab.service';
 import { LoadingController, InfiniteScrollCustomEvent } from '@ionic/angular';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-tab-home',
@@ -30,6 +31,7 @@ export class TabHomePage implements OnInit {
     private http:HttpClient,
     private tabService: TabService,
     private loadingCtral: LoadingController,
+    public router:Router
     ) { 
     this.type = "Home";
   }
@@ -100,6 +102,12 @@ export class TabHomePage implements OnInit {
   loadMore(event?: InfiniteScrollCustomEvent){
     this.currentPage++;
     this.loadContent(event);
+  }
+
+  gotoArticle(id:any){
+    console.log('gotoArticle'+id);
+    this.router.navigateByUrl('article');
+
   }
 
 }

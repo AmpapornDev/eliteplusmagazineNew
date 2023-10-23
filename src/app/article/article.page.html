@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>Elite Plus Magazine</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>News</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-row>
+        <ion-col>
+            <ion-card class="contentCategoryCard" *ngFor="let dataContent of listContent">
+                <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content" [routerLink]="[dataContent.id_content]">
+                <ion-card-header>
+                    <ion-card-title [routerLink]="[dataContent.id_content]"> {{dataContent.title_content}}</ion-card-title>
+                    <ion-card-subtitle>
+                        <div class="contentCategoryCard_desc">
+                            <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
+                            <div class="contentdActions">
+                                <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+
+</ion-content>
