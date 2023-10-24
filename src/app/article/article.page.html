@@ -17,7 +17,7 @@
     <ion-row>
         <ion-col>
             <ion-card class="contentCategoryCard" *ngFor="let dataContent of ArticleList">
-                <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content" [routerLink]="[dataContent.id_content]">
+                <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content" (click)="goToDetailArticle(dataContent.id_content)">
                 <ion-card-header>
                     <ion-card-title [routerLink]="[dataContent.id_content]"> {{dataContent.title_content}}</ion-card-title>
                     <ion-card-subtitle>

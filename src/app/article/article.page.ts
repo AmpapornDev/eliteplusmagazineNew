@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TabService } from '../services/tab.service';
 import { LoadingController, InfiniteScrollCustomEvent } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
+import { Router } from "@angular/router";
 
 @Component({
   templateUrl: './article.page.html',
@@ -22,7 +23,9 @@ export class ArticlePage implements OnInit {
     private route: ActivatedRoute,
     private tabService: TabService,
     private loadingCtral: LoadingController,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private router: Router
+
     ) { }
 
   ngOnInit(){
@@ -68,8 +71,13 @@ export class ArticlePage implements OnInit {
   }
 
   goBackPage(){
-    console.log('goBackPage');
     this.navCtrl.navigateForward('tabs/tab-home');
+  }
+
+  goToDetailArticle(id_content:any){
+    console.log('id content = '+id_content);
+    this.router.navigate(['/tabs/tab-home', id_content]);
+
   }
 
 }
