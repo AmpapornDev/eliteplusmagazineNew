@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import { TabService } from '../services/tab.service';
+import { LoadingController, InfiniteScrollCustomEvent } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   templateUrl: './article.page.html',
@@ -14,24 +16,60 @@ export class ArticlePage implements OnInit {
   ArticleList:any;
   id: any;
   todos:any;
+  currentPage = 1;
   
   constructor(
-    private http: HttpClient,
     private route: ActivatedRoute,
+    private tabService: TabService,
+    private loadingCtral: LoadingController,
+    private navCtrl: NavController
     ) { }
 
   ngOnInit(){
-    this.getTodos();
+
+    this.loadArticleList();
+    
   }
 
+  getListArticle(id:any) {
 
-  getTodos(event?:any) {
-    this.http.get('https://jsonplaceholder.typicode.com/todos').subscribe((data: any) => {
-      this.todos = data;
-      if (event) {
-        event.target.complete();
-      }
+    this.tabService.getListContentByIDMenu(id).subscribe(res => {
+      this.ArticleList = res;
+      console.log(this.ArticleList);
     });
+    
+  }
+
+  async loadArticleList(event?: InfiniteScrollCustomEvent){
+
+    const id = this.route.snapshot.paramMap.get('id');
+    const loading = await this.loadingCtral.create({
+      message: 'Loading...', 
+      spinner:'bubbles'
+    });
+    await loading.present();
+
+    this.tabService.getListContentByIDMenu(id).subscribe(res => {
+      loading.dismiss();
+      this.ArticleList = res;
+      console.log(res);
+      event?.target.complete();
+
+      if(event){
+        event.target.disabled = res.length === this.currentPage;
+      }
+
+    });
+  }
+
+  loadMore(event?: InfiniteScrollCustomEvent){
+    this.currentPage++;
+    this.loadArticleList(event);
+  }
+
+  goBackPage(){
+    console.log('goBackPage');
+    this.navCtrl.navigateForward('tabs/tab-home');
   }
 
 }

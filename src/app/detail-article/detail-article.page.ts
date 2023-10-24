@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,8 @@ export class DetailArticlePage implements OnInit {
     private route: ActivatedRoute,
     private domSanitizer: DomSanitizer,
     public navCtrl:NavController,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private router: Router) { }
   
 
   ngOnInit() {
@@ -44,7 +46,8 @@ export class DetailArticlePage implements OnInit {
 
   gotoHomepage(){
     console.log('gotoHomepage');
-    this.navCtrl.navigateForward('tabs/tab-home');
+   // this.navCtrl.navigateForward('tabs/tab-home');
+    this.router.navigateByUrl('tabs/tab-home')
   }
 
   showText() {

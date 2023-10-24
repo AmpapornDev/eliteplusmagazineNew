@@ -3,21 +3,35 @@
         <ion-title>Elite Plus Magazine</ion-title>
     </ion-toolbar>
     <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button (click)="goBackPage()">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
         <ion-title>News</ion-title>
     </ion-toolbar>
 
 </ion-header>
 
 <ion-content>
+    <ion-row>
+        <ion-col>
+            <ion-card class="contentCategoryCard" *ngFor="let dataContent of ArticleList">
+                <img [src]="imageBaseUrl+'/content/'+dataContent.cover_content" alt="dataContent.title_content" [routerLink]="[dataContent.id_content]">
+                <ion-card-header>
+                    <ion-card-title [routerLink]="[dataContent.id_content]"> {{dataContent.title_content}}</ion-card-title>
+                    <ion-card-subtitle>
+                        <div class="contentCategoryCard_desc">
+                            <h5 color="dark">{{dataContent.date_add | date: 'MMM dd, yyyy'}}</h5>
+                            <div class="contentdActions">
+                                <ion-icon name="heart-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                                <ion-icon name="arrow-redo-outline" color="dark" class="animate__animated md ios flip-rtl hydrated"></ion-icon>
+                            </div>
+                        </div>
+                    </ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>
 
-    <ion-refresher slot="fixed" (ionRefresh)="getTodos($event)">
-        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
-        </ion-refresher-content>
-    </ion-refresher>
-
-    <ion-list>
-        <ion-item *ngFor="let todo of todos">
-            <ion-label>{{todo.id}}</ion-label>
-        </ion-item>
-    </ion-list>
+        </ion-col>
+    </ion-row>
 </ion-content>

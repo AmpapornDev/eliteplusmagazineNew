@@ -1,0 +1,50 @@
+/*** Category Content segment***/
+
+.contentCategoryCard {
+    border-radius: 15px;
+    font-family: Helvetica Neue;
+    padding-bottom: 1rem;
+}
+
+.contentCategoryCard ion-card-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.contentCategoryCard ion-card-title {
+    font-size: 1rem;
+    color: #15294A;
+    font-size: 16px;
+    line-height: 22px;
+    /* 122.222% */
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    text-transform: capitalize;
+    padding-bottom: 1rem;
+}
+
+.contentCategoryCard img {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+}
+
+.contentCategoryCard_desc {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: center;
+    align-content: center;
+}
+
+.contentCategoryCard_desc h5 {
+    font-size: 0.8rem;
+    color: #222428;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
+}
