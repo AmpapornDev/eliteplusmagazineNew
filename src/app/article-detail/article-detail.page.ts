@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TabService } from '../services/tab.service'; 
+
 
 @Component({
   selector: 'app-article-detail',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleDetailPage implements OnInit {
 
-  constructor() { }
+  id_content = this.route.snapshot.paramMap.get('id');
+
+  constructor(
+    private route:ActivatedRoute,
+    private tabService: TabService
+  ) { 
+    console.log("id = "+this.id_content);
+  }
 
   ngOnInit() {
   }

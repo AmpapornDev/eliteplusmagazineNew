@@ -76,7 +76,7 @@ export class ArticlePage implements OnInit {
 
   goToDetailArticle(id_content:any){
     console.log('id content = '+id_content);
-    this.router.navigate(['/tabs/tab-home', id_content]);
+    this.router.navigate(['/article-detail', id_content]);
 
   }
 
